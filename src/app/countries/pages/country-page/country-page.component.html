@@ -1,0 +1,54 @@
+<ng-template #loading>
+  <div class="alert alert-info text-center">
+    Espere por favor
+  </div>
+</ng-template>
+
+<div *ngIf="countr; else loading">
+  <div class="row">
+    <div class="col-12">
+      <h2>País: <strong>{{countr.name.common}}</strong></h2>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <h3>Bandera</h3>
+      <img [src]="countr.flags.svg" [alt]="countr.name.common" class="img-thumbnail">
+    </div>
+    <div class="col">
+      <h3>Información</h3>
+      <ul class="list-group">
+        <li class="list-group-item">
+          <strong>Población: </strong>{{countr.population | number}}
+        </li>
+        <li class="list-group-item">
+          <strong>Código: </strong>{{countr.cca3}}
+        </li>
+        <li class="list-group-item">
+          <strong>Idioma: </strong>{{countr.languages}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-2">
+    <div class="col">
+      <h3>Traducciones</h3>
+      <div class="d-flex flex-wrap">
+        <span class="badge bg-primary m-1">{{countr.translations['ara'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['spa'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['ita'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['bre'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['deu'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['fra'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['jpn'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['nld'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['fin'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['kor'].common}}</span>
+        <span class="badge bg-primary m-1">{{countr.translations['per'].common}}</span>
+      </div>
+    </div>
+  </div>
+</div>
